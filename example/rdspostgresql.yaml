@@ -20,12 +20,12 @@ spec:
         value: "kushal.halder@finbox.in"
       - key: "Pipeline"
         value: "crossplane"
-      - key : "Team"
-        value: "infra"
       - key: "ResourceType"
         value: "rds"
       - key: "Stage"
         value: "dev"
+      - key : "Team"
+        value: "infra"
       - key: crossplane-kind	
         value: rdsinstance.database.aws.crossplane.io	
       - key: crossplane-name	
