@@ -11,21 +11,27 @@ spec:
     masterUsername: masteruser
     allocatedStorage: 20
     engine: postgres
-    engineVersion: "12"
+    engineVersion: "12.13"
     skipFinalSnapshotBeforeDeletion: true
     tags:
       - key: "Name"
         value: "crossplane-rdspostgresql"
-      - key : "Team"
-        value: "infra"
       - key: "Owner"
         value: "kushal.halder@finbox.in"
-      - key: "ResourceType"
-        value: "rds"
       - key: "Pipeline"
         value: "crossplane"
+      - key : "Team"
+        value: "infra"
+      - key: "ResourceType"
+        value: "rds"
       - key: "Stage"
         value: "dev"
+      - key: crossplane-kind	
+        value: rdsinstance.database.aws.crossplane.io	
+      - key: crossplane-name	
+        value: rdspostgresql25	
+      - key: crossplane-providerconfig	
+        value: account-dev-aws-provider-ap-south
   writeConnectionSecretToRef:
     namespace: crossplane-system
     name: aws-rdspostgresql-conn
