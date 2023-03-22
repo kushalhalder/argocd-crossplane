@@ -6,7 +6,7 @@ spec:
   providerConfigRef:
     name: "account-dev-aws-provider-ap-south"
   forProvider:
-    accessPolicies:
+    # accessPolicies:
     clusterConfig:
       coldStorageOptions:
         enabled: false
@@ -17,9 +17,9 @@ spec:
       instanceType: t3.medium.search
       warmCount: 0
       warmEnabled: false
-      warmType: 
+      # warmType: 
       zoneAwarenessEnabled: false
-      zoneAwarenessConfig: 
+      # zoneAwarenessConfig: 
     congnitoOptions: 
       enabled: false
     domainEndpointOptions:
