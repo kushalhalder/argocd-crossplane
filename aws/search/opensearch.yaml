@@ -26,6 +26,7 @@ spec:
       enforceHTTPS: true
     ebsOptions:
       ebsEnabled: true
+      volumeSize: 100
     encryptionAtRestOptions:
       enabled: false
     engineVersion: OpenSearch_1.0
