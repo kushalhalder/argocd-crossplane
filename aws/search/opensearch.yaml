@@ -27,7 +27,7 @@ spec:
     ebsOptions:
       ebsEnabled: false
     encryptionAtRestOptions:
-      enabled: true
+      enabled: false
     engineVersion: OpenSearch_1.0
     name: domain-eks-dev-cluster
     region: ap-south-1
