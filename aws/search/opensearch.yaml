@@ -10,10 +10,10 @@ spec:
     clusterConfig:
       coldStorageOptions:
         enabled: false
-      dedicatedMasterCount: 1
+      dedicatedMasterCount: 2
       dedicatedMasterEnabled: true
       dedicatedMasterType: t3.medium.search
-      instanceCount: 1
+      instanceCount: 2
       instanceType: t3.medium.search
       # warmCount: 0
       # warmEnabled: false
