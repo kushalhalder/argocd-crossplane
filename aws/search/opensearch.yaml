@@ -35,10 +35,10 @@ spec:
     vpcOptions:
       securityGroupIdRefs:
         - name: sg-0942dd7253b8f6efb
-      subnetIdRefs:  
-        - name: subnet-0380d630149acdb23
-        - name: subnet-00520b8925cddfb59
-        - name: subnet-0e7fcd765f4cec5b2  
+      subnetIds:  
+        - subnet-0380d630149acdb23
+        - subnet-00520b8925cddfb59
+        - subnet-0e7fcd765f4cec5b2  
     tags:
       - key: "Name"
         value: "crossplane-domain-eks-dev-cluster"
