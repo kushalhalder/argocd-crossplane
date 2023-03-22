@@ -12,9 +12,9 @@ spec:
         enabled: false
       dedicatedMasterCount: 1
       dedicateMasterEnabled: true
-      dedicatedMasterType:
+      dedicatedMasterType: t3.medium.search
       instanceCount: 1
-      instanceType: 
+      instanceType: t3.medium.search
       warmCount: 0
       warmEnabled: false
       warmType: 
@@ -33,7 +33,7 @@ spec:
     region: ap-south-1
     vpcOptions:
       securityGroupIdRefs:
-        - name: 
+        - name: sg-0942dd7253b8f6efb
       subnetIdRefs:  
         - name: subnet-0380d630149acdb23
         - name: subnet-00520b8925cddfb59
