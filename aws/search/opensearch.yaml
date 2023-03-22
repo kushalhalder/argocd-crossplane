@@ -15,8 +15,8 @@ spec:
       dedicatedMasterType: t3.medium.search
       instanceCount: 1
       instanceType: t3.medium.search
-      warmCount: 0
-      warmEnabled: false
+      # warmCount: 0
+      # warmEnabled: false
       # warmType: 
       zoneAwarenessEnabled: false
       # zoneAwarenessConfig: 
