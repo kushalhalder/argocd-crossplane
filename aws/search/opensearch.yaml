@@ -11,7 +11,7 @@ spec:
       coldStorageOptions:
         enabled: false
       dedicatedMasterCount: 1
-      dedicateMasterEnabled: true
+      dedicatedMasterEnabled: true
       dedicatedMasterType: t3.medium.search
       instanceCount: 1
       instanceType: t3.medium.search
@@ -37,7 +37,7 @@ spec:
       subnetIdRefs:  
         - name: subnet-0380d630149acdb23
         - name: subnet-00520b8925cddfb59
-        - name: subnet-0e7fcd765f4cec5b2
+        - name: subnet-0e7fcd765f4cec5b2  
     tags:
       - key: "Name"
         value: "crossplane-domain-eks-dev-cluster"
