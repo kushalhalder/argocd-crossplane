@@ -22,8 +22,8 @@ spec:
       # zoneAwarenessConfig: 
     congnitoOptions: 
       enabled: false
-    # domainEndpointOptions:
-    #   enforceHTTPS: true
+    domainEndpointOptions:
+      enforceHTTPS: true
     ebsOptions:
       ebsEnabled: true
       volumeSize: 100
@@ -33,12 +33,18 @@ spec:
     name: domain-eks-dev-cluster
     region: ap-south-1
     vpcOptions:
-      securityGroupIds:
-        - sg-0942dd7253b8f6efb
-      subnetIds:  
-        - subnet-0380d630149acdb23
-        - subnet-00520b8925cddfb59
-        - subnet-0e7fcd765f4cec5b2  
+      securityGroupIdRefs:
+        - name: eks-cluster-sg-dev-cluster-2-401174169
+      subnetIdRefs:
+        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
+        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
+        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
+      # securityGroupIds:
+      #   - eks-cluster-sg-dev-cluster-2-401174169
+      # subnetIds:  
+      #   - subnet-0380d630149acdb23
+      #   - subnet-00520b8925cddfb59
+      #   - subnet-0e7fcd765f4cec5b2  
     tags:
       - key: "Name"
         value: "crossplane-domain-eks-dev-cluster"
