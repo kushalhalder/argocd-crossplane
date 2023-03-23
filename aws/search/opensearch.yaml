@@ -34,13 +34,13 @@ spec:
     # engineVersion: OpenSearch_1.0
     name: domain-eks-dev-cluster
     region: ap-south-1
-    vpcOptions:
-      securityGroupIdRefs:
-        - name: eks-cluster-sg-dev-cluster-2-401174169
-      subnetIdRefs:
-        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
-        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
-        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
+    # vpcOptions:
+    #   securityGroupIdRefs:
+    #     - name: eks-cluster-sg-dev-cluster-2-401174169
+    #   subnetIdRefs:
+    #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
+    #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
+    #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
       # securityGroupIds:
       #   - eks-cluster-sg-dev-cluster-2-401174169
       # subnetIds:  
