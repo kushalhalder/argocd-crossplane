@@ -18,8 +18,9 @@ spec:
       # warmCount: 0
       # warmEnabled: false
       # warmType: 
-      zoneAwarenessEnabled: false
-      # zoneAwarenessConfig: 
+      zoneAwarenessEnabled: true
+      zoneAwarenessConfig:
+        availabilityZoneCount: 3
     congnitoOptions: 
       enabled: false
     domainEndpointOptions:
@@ -58,3 +59,6 @@ spec:
         value: "crossplane"
       - key: "Stage"
         value: "dev"
+  writeConnectionSecretToRef:
+    name: domain-eks-dev-cluster
+    namespace: crossplane-system
