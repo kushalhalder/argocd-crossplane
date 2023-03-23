@@ -95,4 +95,4 @@ spec:
     name: sample2-domain
     namespace: crossplane-system
   providerConfigRef:
-    name: example
+    name: "account-dev-aws-provider-ap-south"
