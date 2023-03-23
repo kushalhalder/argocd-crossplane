@@ -8,11 +8,11 @@ spec:
   forProvider:
     # accessPolicies:
     clusterConfig:
-      coldStorageOptions:
-        enabled: false
-      dedicatedMasterCount: 3
-      dedicatedMasterEnabled: true
-      dedicatedMasterType: t3.medium.search
+      # coldStorageOptions:
+      #   enabled: false
+      # dedicatedMasterCount: 3
+      # dedicatedMasterEnabled: true
+      # dedicatedMasterType: t3.medium.search
       instanceCount: 3
       instanceType: t3.medium.search
       # warmCount: 0
@@ -21,16 +21,17 @@ spec:
       zoneAwarenessEnabled: true
       zoneAwarenessConfig:
         availabilityZoneCount: 3
-    congnitoOptions: 
-      enabled: false
-    domainEndpointOptions:
-      enforceHTTPS: true
+    # congnitoOptions: 
+    #   enabled: false
+    # domainEndpointOptions:
+    #   enforceHTTPS: true
     ebsOptions:
       ebsEnabled: true
       volumeSize: 100
+      volumeType: gp2
     encryptionAtRestOptions:
       enabled: false
-    engineVersion: OpenSearch_1.0
+    # engineVersion: OpenSearch_1.0
     name: domain-eks-dev-cluster
     region: ap-south-1
     vpcOptions:
