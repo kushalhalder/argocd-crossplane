@@ -22,8 +22,8 @@ spec:
       # zoneAwarenessConfig: 
     congnitoOptions: 
       enabled: false
-    domainEndpointOptions:
-      enforceHTTPS: true
+    # domainEndpointOptions:
+    #   enforceHTTPS: true
     ebsOptions:
       ebsEnabled: true
       volumeSize: 100
