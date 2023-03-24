@@ -38,16 +38,16 @@ spec:
     vpcOptions:
       # securityGroupIdRefs:
       #   - name: eks-cluster-sg-dev-cluster-2-401174169
-      subnetIdRefs:
-        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
-        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
-        - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
+      # subnetIdRefs:
+      #   - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
+      #   - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
+      #   - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
       securityGroupIds:
         - sg-0942dd7253b8f6efb
-      # subnetIds:  
-      #   - subnet-0380d630149acdb23
-      #   - subnet-00520b8925cddfb59
-      #   - subnet-0e7fcd765f4cec5b2  
+      subnetIds:  
+        - subnet-0380d630149acdb23
+        - subnet-00520b8925cddfb59
+        - subnet-0e7fcd765f4cec5b2  
     tags:
       - key: "Name"
         value: "crossplane-domain-eks-dev-cluster"
