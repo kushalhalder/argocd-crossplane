@@ -1,98 +1,65 @@
-# apiVersion: opensearchservice.aws.crossplane.io/v1alpha1
-# kind: Domain
-# metadata:
-#   name: domain-eks-dev-cluster
-# spec:
-#   providerConfigRef:
-#     name: "account-dev-aws-provider-ap-south"
-#   forProvider:
-#     # accessPolicies:
-#     clusterConfig:
-#       # coldStorageOptions:
-#       #   enabled: false
-#       # dedicatedMasterCount: 3
-#       # dedicatedMasterEnabled: true
-#       # dedicatedMasterType: t3.medium.search
-#       instanceCount: 3
-#       instanceType: t3.medium.search
-#       # warmCount: 0
-#       # warmEnabled: false
-#       # warmType: 
-#       zoneAwarenessEnabled: true
-#       zoneAwarenessConfig:
-#         availabilityZoneCount: 3
-#     # congnitoOptions: 
-#     #   enabled: false
-#     # domainEndpointOptions:
-#     #   enforceHTTPS: true
-#     ebsOptions:
-#       ebsEnabled: true
-#       volumeSize: 100
-#       volumeType: gp2
-#     encryptionAtRestOptions:
-#       enabled: false
-#     # engineVersion: OpenSearch_1.0
-#     name: domain-eks-dev-cluster
-#     region: ap-south-1
-#     # vpcOptions:
-#     #   securityGroupIdRefs:
-#     #     - name: eks-cluster-sg-dev-cluster-2-401174169
-#     #   subnetIdRefs:
-#     #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
-#     #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
-#     #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
-#       # securityGroupIds:
-#       #   - eks-cluster-sg-dev-cluster-2-401174169
-#       # subnetIds:  
-#       #   - subnet-0380d630149acdb23
-#       #   - subnet-00520b8925cddfb59
-#       #   - subnet-0e7fcd765f4cec5b2  
-#     tags:
-#       - key: "Name"
-#         value: "crossplane-domain-eks-dev-cluster"
-#       - key : "Team"
-#         value: "infra"
-#       - key: "Owner"
-#         value: "kushal.halder@finbox.in"
-#       - key: "ResourceType"
-#         value: "opensearch"
-#       - key: "Pipeline"
-#         value: "crossplane"
-#       - key: "Stage"
-#         value: "dev"
-#   writeConnectionSecretToRef:
-#     name: domain-eks-dev-cluster
-#     namespace: crossplane-system
----
 apiVersion: opensearchservice.aws.crossplane.io/v1alpha1
 kind: Domain
 metadata:
-  name: sample2-domain
+  name: domain-eks-dev-cluster
 spec:
-  forProvider:
-    name: sample2-domain
-    region: ap-south-1
-    ebsOptions:
-      ebsEnabled: true
-      volumeType: gp2
-      volumeSize: 10
-    clusterConfig:
-      zoneAwarenessEnabled: true
-      zoneAwarenessConfig:
-        availabilityZoneCount: 2
-      instanceCount: 2
-    encryptionAtRestOptions:
-      enabled: true
-      kmsKeyIdRef:
-        name: dev-key
-    vpcOptions:
-      securityGroupIdRefs:
-        - name: sample-cluster-sg-2
-      subnetIdRefs:
-        - name: sample-subnet1
-        - name: sample-subnet2
-  writeConnectionSecretToRef:
-    name: sample2-domain
-    namespace: crossplane-system
   providerConfigRef:
     name: "account-dev-aws-provider-ap-south"
+  forProvider:
+    # accessPolicies:
+    clusterConfig:
+      # coldStorageOptions:
+      #   enabled: false
+      # dedicatedMasterCount: 3
+      # dedicatedMasterEnabled: true
+      # dedicatedMasterType: t3.medium.search
+      instanceCount: 3
+      instanceType: t3.medium.search
+      # warmCount: 0
+      # warmEnabled: false
+      # warmType: 
+      zoneAwarenessEnabled: true
+      zoneAwarenessConfig:
+        availabilityZoneCount: 3
+    # congnitoOptions: 
+    #   enabled: false
+    # domainEndpointOptions:
+    #   enforceHTTPS: true
+    ebsOptions:
+      ebsEnabled: true
+      volumeSize: 100
+      volumeType: gp2
+    encryptionAtRestOptions:
+      enabled: false
+    # engineVersion: OpenSearch_1.0
+    name: domain-eks-dev-cluster
+    region: ap-south-1
+    vpcOptions:
+    #   securityGroupIdRefs:
+    #     - name: eks-cluster-sg-dev-cluster-2-401174169
+    #   subnetIdRefs:
+    #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
+    #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
+    #     - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
+      securityGroupIds:
+        - eks-cluster-sg-dev-cluster-2-401174169
+      subnetIds:  
+        - subnet-0380d630149acdb23
+        - subnet-00520b8925cddfb59
+        - subnet-0e7fcd765f4cec5b2  
+    tags:
+      - key: "Name"
+        value: "crossplane-domain-eks-dev-cluster"
+      - key : "Team"
+        value: "infra"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "ResourceType"
+        value: "opensearch"
+      - key: "Pipeline"
+        value: "crossplane"
+      - key: "Stage"
+        value: "dev"
+  writeConnectionSecretToRef:
+    name: domain-eks-dev-cluster
+    namespace: crossplane-system
