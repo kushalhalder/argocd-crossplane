@@ -33,7 +33,7 @@ spec:
       volumeType: gp2
     encryptionAtRestOptions:
       enabled: false
-    # engineVersion: OpenSearch_1.0
+    engineVersion: Elasticsearch_7.9
     
     vpcOptions:
       # securityGroupIdRefs:
