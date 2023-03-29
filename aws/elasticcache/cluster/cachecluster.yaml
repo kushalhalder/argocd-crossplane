@@ -1,0 +1,32 @@
+apiVersion: cache.aws.crossplane.io/v1alpha1
+kind: CacheCluster
+metadata:
+  name: redis-eks-dev-cluster
+spec:
+  providerConfigRef:
+    name: "account-dev-aws-provider-ap-south"
+  forProvider:
+    name: redis-eks-dev-cluster
+    region: ap-south-1
+    applyImmediately: true
+    cacheNodeType: cache.r6g.large
+    cacheSubnetGroupName:
+      sdfasdf
+    engine: redis
+    engineVersion: 7.0
+    numCacheNodes: 1
+    securityGroupIds:
+      - sg-0942dd7253b8f6efb
+    tags:
+      - key: "Name"
+        value: "crossplane-domain-eks-dev-cluster"
+      - key : "Team"
+        value: "infra"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "ResourceType"
+        value: "opensearch"
+      - key: "Pipeline"
+        value: "crossplane"
+      - key: "Stage"
+        value: "dev"

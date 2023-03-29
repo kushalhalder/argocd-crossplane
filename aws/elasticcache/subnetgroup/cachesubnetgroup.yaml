@@ -1,0 +1,13 @@
+apiVersion: cache.aws.crossplane.io/v1alpha1
+kind: CacheSubnetGroup
+spec:
+  providerConfigRef:
+    name: "account-dev-aws-provider-ap-south"
+  forProvider:
+    name: redis-subnetgroup-eks-dev-cluster
+    region: ap-south-1
+    description: EKS Dev cluster Cache Subnet Group
+    subnetIds:
+      - subnet-0380d630149acdb23
+      - subnet-00520b8925cddfb59
+      - subnet-0e7fcd765f4cec5b2
