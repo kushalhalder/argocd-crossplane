@@ -10,8 +10,7 @@ spec:
     region: ap-south-1
     applyImmediately: true
     cacheNodeType: cache.r6g.large
-    cacheSubnetGroupName:
-      sdfasdf
+    cacheSubnetGroupName: redis-subnetgroup-eks-dev-cluster
     engine: redis
     engineVersion: 7.0
     numCacheNodes: 1

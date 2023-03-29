@@ -1,5 +1,7 @@
 apiVersion: cache.aws.crossplane.io/v1alpha1
 kind: CacheSubnetGroup
+metadata:
+  name: redis-subnetgroup-eks-dev-cluster
 spec:
   providerConfigRef:
     name: "account-dev-aws-provider-ap-south"
