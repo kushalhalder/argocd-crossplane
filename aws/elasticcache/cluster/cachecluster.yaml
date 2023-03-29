@@ -12,7 +12,7 @@ spec:
     cacheNodeType: cache.r6g.large
     cacheSubnetGroupName: redis-subnetgroup-eks-dev-cluster
     engine: redis
-    engineVersion: 7.0
+    engineVersion: "7.0"
     numCacheNodes: 1
     securityGroupIds:
       - sg-0942dd7253b8f6efb
