@@ -6,7 +6,6 @@ spec:
   providerConfigRef:
     name: "account-dev-aws-provider-ap-south"
   forProvider:
-    name: redis-subnetgroup-eks-dev-cluster
     region: ap-south-1
     description: EKS Dev cluster Cache Subnet Group
     subnetIds:
