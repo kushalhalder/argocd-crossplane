@@ -1,0 +1,14 @@
+apiVersion: cache.aws.crossplane.io/v1alpha1
+kind: CacheSubnetGroup
+metadata:
+  name: redis-subnetgroup-octopus-prod-cluster
+spec:
+  providerConfigRef:
+    name: "default"
+  forProvider:
+    region: ap-south-1
+    description: EKS Lending Prod cluster Cache Subnet Group
+    subnetIds:
+      - subnet-0250d1e0496c46dae
+      - subnet-0ba5dbcb2d0282822
+      - subnet-0e0c3ebd2a82be601

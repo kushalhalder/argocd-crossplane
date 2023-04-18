@@ -1,0 +1,30 @@
+apiVersion: cache.aws.crossplane.io/v1alpha1
+kind: CacheCluster
+metadata:
+  name: octo-redis-prod-cluster
+spec:
+  providerConfigRef:
+    name: "default"
+  forProvider:
+    region: ap-south-1
+    applyImmediately: true
+    cacheNodeType: cache.r6g.large
+    cacheSubnetGroupName: redis-subnetgroup-octopus-prod-cluster
+    engine: redis
+    engineVersion: "7.0"
+    numCacheNodes: 1
+    securityGroupIds:
+      - sg-0a01bf518d99b2abc
+    tags:
+      - key: "Name"
+        value: "crossplane-domain-eks-dev-cluster"
+      - key : "Team"
+        value: "infra"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "ResourceType"
+        value: "opensearch"
+      - key: "Pipeline"
+        value: "crossplane"
+      - key: "Stage"
+        value: "dev"
