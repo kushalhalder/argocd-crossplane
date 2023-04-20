@@ -1,0 +1,41 @@
+---
+apiVersion: kafka.aws.crossplane.io/v1alpha1
+kind: Cluster
+metadata:
+  name: kafka-elt
+spec:
+  forProvider:
+    clusterName: kafka-elt
+    region: ap-south-1
+    brokerNodeGroupInfo:
+      clientSubnetRefs:
+        - name: subnet-0380d630149acdb23
+        - name: subnet-00520b8925cddfb59
+        - name: subnet-0e7fcd765f4cec5b2
+      securityGroupRefs:
+        - name: sg-0942dd7253b8f6efb
+      instanceType: kafka.t3.small
+      storageInfo:
+        ebsStorageInfo:
+          volumeSize: 1
+    kafkaVersion: 2.6.1
+    configurationInfo:
+      arnRef:
+        name: kafka-elt-configuration
+      revision: 1
+    numberOfBrokerNodes: 2
+    tags:
+      - key: "Name"
+        value: "crossplane-domain-eks-dev-cluster"
+      - key : "Team"
+        value: "infra"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "ResourceType"
+        value: "kafka"
+      - key: "Pipeline"
+        value: "crossplane"
+      - key: "Stage"
+        value: "dev"
+  providerConfigRef:
+    name: "account-dev-aws-provider-ap-south"
