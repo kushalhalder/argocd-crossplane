@@ -25,17 +25,11 @@ spec:
       revision: 1
     numberOfBrokerNodes: 2
     tags:
-      - key: "Name"
-        value: "crossplane-domain-eks-dev-cluster"
-      - key : "Team"
-        value: "infra"
-      - key: "Owner"
-        value: "kushal.halder@finbox.in"
-      - key: "ResourceType"
-        value: "kafka"
-      - key: "Pipeline"
-        value: "crossplane"
-      - key: "Stage"
-        value: "dev"
+      Name: crossplane-domain-eks-dev-cluster
+      Team: infra
+      Owner: kushal.halder@finbox.in
+      ResourceType: kafka
+      Pipeline: crossplane
+      Stage: dev
   providerConfigRef:
     name: "account-dev-aws-provider-ap-south"
