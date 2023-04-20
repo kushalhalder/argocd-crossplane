@@ -12,8 +12,8 @@ spec:
         - subnet-0380d630149acdb23
         - subnet-00520b8925cddfb59
         - subnet-0e7fcd765f4cec5b2
-      securityGroupRefs:
-        - name: sg-0942dd7253b8f6efb
+      securityGroups:
+        - sg-0942dd7253b8f6efb
       instanceType: kafka.t3.small
       storageInfo:
         ebsStorageInfo:
