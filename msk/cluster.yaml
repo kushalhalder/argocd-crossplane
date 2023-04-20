@@ -23,7 +23,7 @@ spec:
       arnRef:
         name: kafka-elt-configuration
       revision: 1
-    numberOfBrokerNodes: 2
+    numberOfBrokerNodes: 3
     tags:
       Name: crossplane-domain-eks-dev-cluster
       Team: infra
