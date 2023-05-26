@@ -1,7 +1,7 @@
 apiVersion: opensearchservice.aws.crossplane.io/v1alpha1
 kind: Domain
 metadata:
-  name: domain-eks-dev-cluster
+  name: domain-kyc-temporal-prod-cluster
 spec:
   providerConfigRef:
     name: "default"
