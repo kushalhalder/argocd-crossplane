@@ -62,5 +62,5 @@ spec:
       - key: "Stage"
         value: "prod"
   writeConnectionSecretToRef:
-    name: domain-eks-dev-cluster
+    name: domain-temporal
     namespace: crossplane-system
