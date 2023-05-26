@@ -1,12 +1,12 @@
 apiVersion: opensearchservice.aws.crossplane.io/v1alpha1
 kind: Domain
 metadata:
-  name: domain-temporal-prod-cluster
+  name: domain-temporal-prod
 spec:
   providerConfigRef:
     name: "default"
   forProvider:
-    name: domain-kyc-temporal-cluster
+    name: domain-kyc-temporal
     region: ap-south-1
     # accessPolicies:
     clusterConfig:
