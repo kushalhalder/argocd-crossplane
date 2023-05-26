@@ -1,0 +1,66 @@
+apiVersion: opensearchservice.aws.crossplane.io/v1alpha1
+kind: Domain
+metadata:
+  name: domain-eks-dev-cluster
+spec:
+  providerConfigRef:
+    name: "default"
+  forProvider:
+    name: domain-kyc-temporal-cluster
+    region: ap-south-1
+    # accessPolicies:
+    clusterConfig:
+      # coldStorageOptions:
+      #   enabled: false
+      dedicatedMasterCount: 3
+      dedicatedMasterEnabled: true
+      dedicatedMasterType: t3.medium.search
+      instanceCount: 3
+      instanceType: t3.medium.search
+      # warmCount: 0
+      # warmEnabled: false
+      # warmType: 
+      zoneAwarenessEnabled: true
+      zoneAwarenessConfig:
+        availabilityZoneCount: 3
+    # congnitoOptions: 
+    #   enabled: false
+    # domainEndpointOptions:
+    #   enforceHTTPS: true
+    ebsOptions:
+      ebsEnabled: true
+      volumeSize: 100
+      volumeType: gp2
+    encryptionAtRestOptions:
+      enabled: false
+    engineVersion: Elasticsearch_7.9
+
+    vpcOptions:
+      # securityGroupIdRefs:
+      #   - name: eks-cluster-sg-dev-cluster-2-401174169
+      # subnetIdRefs:
+      #   - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1A
+      #   - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1B
+      #   - name: eksctl-dev-cluster-2-cluster/SubnetPrivateAPSOUTH1C
+      securityGroupIds:
+        - sg-0a01bf518d99b2abc
+      subnetIds:  
+        - subnet-00214644c6fac7629
+        - subnet-081a4ad4399ff0a20
+        - subnet-0114d8461c7854633  
+    tags:
+      - key: "Name"
+        value: "temporal-kyc-es-cluster"
+      - key : "Team"
+        value: "kyc"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "ResourceType"
+        value: "opensearch"
+      - key: "Pipeline"
+        value: "kyc"
+      - key: "Stage"
+        value: "prod"
+  writeConnectionSecretToRef:
+    name: domain-eks-dev-cluster
+    namespace: crossplane-system
