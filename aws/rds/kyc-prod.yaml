@@ -1,0 +1,53 @@
+apiVersion: database.aws.crossplane.io/v1beta1
+kind: RDSInstance
+metadata:
+  name: kyc-prod
+spec:
+  providerConfigRef:
+    name: "default"
+  forProvider:
+    dbSubnetGroupName: "kyc-subnet-group"
+    region: ap-south-1
+    vpcSecurityGroupIds: ["sg-0a01bf518d99b2abc"]
+    allocatedStorage: 100
+    autoMinorVersionUpgrade: true
+    backupRetentionPeriod: 0
+    caCertificateIdentifier: rds-ca-2019
+    copyTagsToSnapshot: true
+    dbInstanceClass: db.t3.medium
+    deletionProtection: true
+    enableIAMDatabaseAuthentication: false
+    enablePerformanceInsights: false
+    engine: postgres
+    engineVersion: "13"
+    finalDBSnapshotIdentifier: kyc
+    masterUsername: kyc
+    multiAZ: false
+    port: 5432
+    preferredBackupWindow: 06:15-06:45
+    preferredMaintenanceWindow: sat:09:21-sat:09:51
+    publiclyAccessible: false
+    storageEncrypted: false
+    storageType: gp2
+    tags:
+      - key: "Name"
+        value: "crossplane-rdspostgresql"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "Pipeline"
+        value: "kyc"
+      - key: "ResourceType"
+        value: "rds"
+      - key: "Stage"
+        value: "prod"
+      - key : "Team"
+        value: "kyc"
+      - key: crossplane-kind	
+        value: rdsinstance.database.aws.crossplane.io	
+      - key: crossplane-name	
+        value: kyc-prod	
+      - key: crossplane-providerconfig	
+        value: default
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: rdspostgresql25-prod
