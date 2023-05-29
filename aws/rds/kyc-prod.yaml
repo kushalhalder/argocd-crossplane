@@ -6,7 +6,7 @@ spec:
   providerConfigRef:
     name: "default"
   forProvider:
-    dbSubnetGroupName: "kyc-subnet-group"
+    dbSubnetGroupName: "temporal-subnet-group"
     region: ap-south-1
     vpcSecurityGroupIds: ["sg-0a01bf518d99b2abc"]
     allocatedStorage: 100
