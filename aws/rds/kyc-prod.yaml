@@ -50,4 +50,4 @@ spec:
         value: default
   writeConnectionSecretToRef:
     namespace: crossplane-system
-    name: rdspostgresql25-prod
+    name: kyc-prod
