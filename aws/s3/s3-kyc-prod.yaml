@@ -1,7 +1,7 @@
 apiVersion: s3.aws.crossplane.io/v1beta1
 kind: Bucket
 metadata:
-  name: kyc-files
+  name: ef-kyc-files
 spec:
   providerConfigRef:
     name: "default"
