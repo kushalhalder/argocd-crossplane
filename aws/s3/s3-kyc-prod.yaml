@@ -11,7 +11,7 @@ spec:
     serverSideEncryptionConfiguration:
       rules:
         - applyServerSideEncryptionByDefault:
-          sseAlgorithm: AES256
+            sseAlgorithm: AES256
   writeConnectionSecretToRef:
     name: kyc-s3
     namespace: crossplane-system
