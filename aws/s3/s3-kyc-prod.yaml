@@ -6,7 +6,7 @@ spec:
   providerConfigRef:
     name: "default"
   forProvider:
-    acl: private
+#    acl: private
     locationConstraint: ap-south-1
     serverSideEncryptionConfiguration:
       rules:
