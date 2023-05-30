@@ -5,9 +5,15 @@ metadata:
 spec:
   providerConfigRef:
     name: "default"
+  deletionPolicy: Orphan
   forProvider:
-    acl: private
     locationConstraint: ap-south-1
+    objectOwnership: BucketOwnerPreferred
+    publicAccessBlockConfiguration:
+      blockPublicAcls: true
+      blockPublicPolicy: true
+      ignorePublicAcls: true
+      restrictPublicBuckets: true
     serverSideEncryptionConfiguration:
       rules:
         - applyServerSideEncryptionByDefault:
