@@ -14,7 +14,7 @@ spec:
     securityGroupIds:
       - sg-0a01bf518d99b2abc
     cacheSubnetGroupName: redis-subnetgroup-kyc-prod-cluster
-    numCacheClusters: 1
+    numCacheClusters: 2
     applyModificationsImmediately: true
     transitEncryptionEnabled: true
     atRestEncryptionEnabled: true
