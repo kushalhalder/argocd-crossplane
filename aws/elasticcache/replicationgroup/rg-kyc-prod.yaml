@@ -1,0 +1,38 @@
+apiVersion: cache.aws.crossplane.io/v1beta1
+kind: ReplicationGroup
+metadata:
+  name: kyc-redis-prod-replication-group
+spec:
+  providerConfigRef:
+    name: "default"
+  forProvider:
+    port: 6379
+    region: ap-south-1
+    engine: redis
+    automaticFailoverEnabled: true
+    replicationGroupDescription: Kyc Redis Replication Group
+    securityGroupIds:
+      - sg-0a01bf518d99b2abc
+    cacheSubnetGroupName: redis-subnetgroup-kyc-prod-cluster
+    numCacheClusters: 1
+    applyModificationsImmediately: true
+    transitEncryptionEnabled: true
+    atRestEncryptionEnabled: true
+    tags:
+      - key: "Name"
+        value: "kyc-redis"
+      - key : "Team"
+        value: "kyc"
+      - key: "Owner"
+        value: "kushal.halder@finbox.in"
+      - key: "ResourceType"
+        value: "elasticcache"
+      - key: "Pipeline"
+        value: "kyc"
+      - key: "Stage"
+        value: "prod"
+    cacheNodeType: cache.r6g.large
+  reclaimPolicy: Delete
+  writeConnectionSecretToRef:
+    name: kyc-redis-conn
+    namespace: crossplane-system
