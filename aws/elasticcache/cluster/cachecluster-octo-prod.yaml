@@ -13,6 +13,8 @@ spec:
     engine: redis
     engineVersion: "7.0"
     numCacheNodes: 1
+    transitEncryptionEnabled: true
+    atRestEncryptionEnabled: true
     securityGroupIds:
       - sg-0a01bf518d99b2abc
     tags:
