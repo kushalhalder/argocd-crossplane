@@ -6,7 +6,8 @@ metadata:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   components:
-    - type: webservice
+    - name: wf-poc-app-2-1
+      type: webservice
       properties:
         image: oamdev/helloworld-python:v1
         env:
