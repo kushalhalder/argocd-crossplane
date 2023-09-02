@@ -2,6 +2,8 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: test-2
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   components:
     - name: wf-poc-app-2
